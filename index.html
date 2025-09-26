@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic page</title>
     <link rel="stylesheet" href="style.css">
+   
 </head>
 <body>
 
@@ -12,7 +13,14 @@
         <div class="header-left">
             <a href="#">
                 <img src="logo.svg" alt="Company Logo" class="logo-icon">
+                <span class="logo-text">Java</span>
             </a>
+        </div>
+        <div class="header-center">
+            <nav>
+                <button class="registration-button" onclick="showForm()"><b>Registration</b></button>
+            </nav>
+
         </div>
         <div class="header-right">
             <a href="https://www.google.com" class="about-button">About</a>
@@ -20,13 +28,61 @@
     </header>
 
     <main>
-        <h1>Welcome !</h1>
-        <p>This is the main body of the page.</p>
+        <div class="main-content">
+            <!-- Left Side: Intro and Dummy Buttons -->
+            <div class="content-left">
+                <div class="intro-text-container">
+                    <h1>Welcome !</h1>
+                    <p>
+                        Content in progress.
+                    </p>
+                </div>
+                <button class="left-button"><b>Update</b></button><br>
+                <button class="left-button"><b>Show</b></button><br>
+                <button class="left-button"><b>Delete</b></button><br>
+            </div>
+            
+            <!-- Right Side: Registration Form -->
+            <div class="content-right">
+                <form class="registration-form" id="registrationForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select...</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="education">Educational Qualifications:</label>
+                    <input type="text" id="education" name="education" required>
+                    <button type="submit" class="submit-button"><b>Submit</b></button>
+                    <div class="form-buttons">
+                        <button type="button" class="close-button" onclick="closeForm()">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Jah. All Rights Reserved.</p>
+        <p>&copy; 2025. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function showForm() {
+            const form = document.getElementById('registrationForm');
+            form.style.display = 'block';
+        }
+
+        function closeForm() {
+            const form = document.getElementById('registrationForm');
+            form.style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
