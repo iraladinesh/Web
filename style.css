@@ -61,6 +61,12 @@ header {
     align-items: flex-start;
     gap: 2rem; 
         } 
+    .input-group {
+    display: flex;
+    gap: 1rem; /* Space between the button/label pairs */
+    margin-bottom: 1rem;
+    align-items: center;
+    }
 
 .registration-button, .submit-button {
     background-color: #4f46e5;

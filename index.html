@@ -29,7 +29,7 @@
 
     <main>
         <div class="main-content">
-            <!-- Left Side: Intro and Dummy Buttons -->
+            <!-- Left Side: Intro and Buttons -->
             <div class="content-left">
                 <div class="intro-text-container">
                     <h1>Welcome !</h1>
@@ -45,19 +45,41 @@
             <!-- Right Side: Registration Form -->
             <div class="content-right">
                 <form class="registration-form" id="registrationForm">
+                    
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
 
-                    <label for="gender">Gender:</label>
-                    <select id="gender" name="gender" required>
-                        <option value="">Select...</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
-                    </select>
+                    <label>Gender:</label>
+                    <div class="input-group">
+                        <label for="genderMale" >Male</label>
+                        <input type="radio" id="genderMale" name="gender" value="male" required>
+                        
+                        <label for="genderFemale" >Female</label>
+                        <input type="radio" id="genderFemale" name="gender" value="female">
+                        
+                        <label for="genderOther">Other</label>
+                        <input type="radio" id="genderOther" name="gender" value="other">
+                    </div>
 
-                    <label for="education">Educational Qualifications:</label>
-                    <input type="text" id="education" name="education" required>
+                    
+                    <label>Degree Level (Select all that apply):</label>
+                    <div class="input-group">
+                        <label for="degreeBachelors" >Bachelor's</label>
+                        <input type="checkbox" id="degreeBachelors" name="degreeBachelors" value="Bachelors">
+                        <label for="degreeMasters">Master's</label>
+                        <input type="checkbox" id="degreeMasters" name="degreeMasters" value="Masters">
+                        <label for="degreePhD" class="inline-label">PhD</label>
+                        <input type="checkbox" id="degreePhD" name="degreePhD" value="PhD">
+                    </div>
+
+                    <label>Skills/Interests:</label>
+                    <div class="input-group">
+                        <label for="skillHTML">HTML/CSS</label>    
+                        <input type="checkbox" id="skillHTML" name="skill" value="HTML">
+                        <label for="skillJS">JavaScript</label>
+                        <input type="checkbox" id="skillJS" name="skill" value="JavaScript">
+                    </div>
+                    
                     <button type="submit" class="submit-button"><b>Submit</b></button>
                     <div class="form-buttons">
                         <button type="button" class="close-button" onclick="closeForm()">Close</button>
@@ -79,8 +101,7 @@
         }
 
         function closeForm() {
-            const form = document.getElementById('registrationForm');
-            form.style.display = 'none';
+             window.location.reload();
         }
     </script>
 
